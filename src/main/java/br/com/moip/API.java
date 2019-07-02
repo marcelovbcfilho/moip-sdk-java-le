@@ -9,6 +9,7 @@ import br.com.moip.api.CustomerAPI;
 import br.com.moip.api.ConnectAPI;
 import br.com.moip.api.NotificationPreferencesAPI;
 import br.com.moip.api.RefundAPI;
+import br.com.moip.api.SubscriptionPlanAPI;
 import br.com.moip.api.MultiorderAPI;
 import br.com.moip.api.MultipaymentAPI;
 import br.com.moip.api.BankAccountsAPI;
@@ -43,6 +44,10 @@ public class API {
 
     public CustomerAPI customer() {
         return new CustomerAPI(client);
+    }
+    
+    public SubscriptionPlanAPI subscriptionPlan() {
+    	return new SubscriptionPlanAPI(client);
     }
 
     public ConnectAPI connect() {

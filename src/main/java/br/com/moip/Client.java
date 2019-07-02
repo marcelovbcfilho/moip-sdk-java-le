@@ -222,7 +222,9 @@ public class Client {
 
     private String getBody(Object object, ContentType contentType) {
         if (contentType == ContentType.APPLICATION_FORM_URLENCODED) {
-            return jsonToUrlEncodedString((JsonObject) new JsonParser().parse(gson.toJson(object)));
+        	String body = jsonToUrlEncodedString((JsonObject) new JsonParser().parse(gson.toJson(object)));
+        	System.out.println(body);
+            return body;
         }
 
         return gson.toJson(object);
