@@ -62,7 +62,7 @@ public class SubscriptionPlanAPI {
      * @return
      * 	Return nothing, but it will verify the response code if 200 it activated successfully 
      */
-    public SubscriptionPlan activateSubscribtionPlan (SubscriptionPlanRequest plan) {
+    public SubscriptionPlan activateSubscribtionPlan (SubscriptionPlan plan) {
         return client.put(String.format("/assinaturas/v1/plans/%s/activate", plan.getCode()), plan, SubscriptionPlan.class);
     }
 
@@ -72,7 +72,7 @@ public class SubscriptionPlanAPI {
      * 	The plan to be desactivated
      * @return
      */
-    public SubscriptionPlan desactivateSubscribtionPlan (SubscriptionPlanRequest plan) {
+    public SubscriptionPlan desactivateSubscribtionPlan (SubscriptionPlan plan) {
         return client.put(String.format("/assinaturas/v1/plans/%s/inactivate", plan.getCode()), plan, SubscriptionPlan.class);
     }
     
@@ -83,7 +83,7 @@ public class SubscriptionPlanAPI {
      * @return
      * 	Return 200 OK if everithing was right
      */
-    public SubscriptionPlan updateSubscribtionPlan (SubscriptionPlanRequest plan) {
+    public SubscriptionPlan updateSubscribtionPlan (SubscriptionPlan plan) {
         return client.put(String.format("/assinaturas/v1/plans/%s", plan.getCode()), plan, SubscriptionPlan.class);
     }
 }

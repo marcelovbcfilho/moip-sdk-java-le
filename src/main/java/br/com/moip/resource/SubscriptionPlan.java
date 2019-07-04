@@ -1,5 +1,7 @@
 package br.com.moip.resource;
 
+import com.google.gson.annotations.SerializedName;
+
 import br.com.moip.request.IntervalSubscriptionRequest;
 import br.com.moip.request.TrialSubscriptionRequest;
 
@@ -43,7 +45,8 @@ public class SubscriptionPlan {
 	 * Max Length: 11
 	 * Description: Hiring fee to be charged in the signature in cents of Real.
 	 */
-	private int setup_fee;
+	@SerializedName("setup_fee")
+	private int setupFee;
 	
 	/**
 	 * Required: False
@@ -60,6 +63,7 @@ public class SubscriptionPlan {
 	 * 	The TRIAL period consumes a billing cycle unit.
 	 * Default: The invoice will never expires
 	 */
+	@SerializedName("billing_cycles")
 	private int billingCycles;
 	
 	/**
@@ -83,6 +87,7 @@ public class SubscriptionPlan {
 	 * Default: without limits
 	 * Description: Maximum number of signatures of the plan (if not informed, there will be no limit).
 	 */
+	@SerializedName("max_qty")
 	private int maxQty;
 	
 	/**
@@ -91,6 +96,7 @@ public class SubscriptionPlan {
 	 * Default: "ALL"
 	 * Description: Forms of payment accepted in the plan.
 	 */
+	@SerializedName("payment_method")
 	private String paymentMethod;
 	
 	/**
@@ -160,12 +166,12 @@ public class SubscriptionPlan {
 		this.amount = amount;
 	}
 
-	public int getSetup_fee() {
-		return setup_fee;
+	public int getsetupFee() {
+		return setupFee;
 	}
 
-	public void setSetup_fee(int setup_fee) {
-		this.setup_fee = setup_fee;
+	public void setsetupFee(int setupFee) {
+		this.setupFee = setupFee;
 	}
 
 	public IntervalSubscriptionRequest getInterval() {
@@ -222,5 +228,17 @@ public class SubscriptionPlan {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	@Override
+	public String toString() {
+		String string = ""
+				+ "{\n code: '" + this.code + "',\nname: '" + this.name + "',\n"
+				+ "description: '" + this.description + "', \namount: '" + this.amount + "',\n"
+				+ "setup_fee: '" + this.setupFee + "',\ninterval: {" + this.interval + "},\n"
+				+ "billing_cycles: '" + this.billingCycles + "', trial: {" + this.interval + "},\n"
+				+ "status: '" + this.status + "',\nmax_qty: '" + this.maxQty + "',\n"
+				+ "payment_method: '" + this.paymentMethod + "',\nid: '" + this.id + "'\n}";
+		return string;
 	}
 }
