@@ -1,17 +1,15 @@
-package br.com.moip.request;
+package br.com.moip.resource;
 
-import br.com.moip.resource.AddressSubscriber;
-import br.com.moip.resource.BillingInfo;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * This class implements the subscriber attributes needed for a request system from WireCard V1
+ * This class implements the data needed to create a subscriber on WireCard API
  *
  * @author Marcelo Vilas Boas Correa Filho
  * @version 0.1
  */
 
-public class SubscriberRequest {
+public class Subscriber {
 
     /**
      * Required: True
@@ -93,7 +91,7 @@ public class SubscriberRequest {
     @SerializedName("billing_info")
     private BillingInfo billingInfo;
 
-    public SubscriberRequest() {
+    public Subscriber() {
     }
 
     /**
@@ -110,7 +108,7 @@ public class SubscriberRequest {
      * @param birthDateYear
      * @param address
      */
-    public SubscriberRequest(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address) {
+    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address) {
         this.code = code;
         this.fullname = fullname;
         this.email = email;
@@ -123,7 +121,7 @@ public class SubscriberRequest {
         this.address = address;
     }
 
-    public SubscriberRequest(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address, BillingInfo billingInfo) {
+    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address, BillingInfo billingInfo) {
         this.code = code;
         this.fullname = fullname;
         this.email = email;
@@ -224,4 +222,44 @@ public class SubscriberRequest {
     public void setBillingInfo(BillingInfo billingInfo) {
         this.billingInfo = billingInfo;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder("{\n");
+        string.append("\tcode: '" + this.code + "',\n")
+        .append("\temail: '" + this.email + "',\n")
+        .append("\tfullname: '" + this.fullname + "',\n")
+        .append("\tcpf: '" + this.cpf + "',\n")
+        .append("\tphone_area_code: '" + this.phoneAreaCode + "',\n")
+        .append("\tphone_number: '" + this.phoneNumber + "',\n")
+        .append("\tbirthdate_day: '" + this.birthDateDay + "',\n")
+        .append("\tbirthdate_month: '" + this.birthDateMonth + "',\n")
+        .append("\tbirthdate_year: '" + this.birthDateYear + "',\n")
+        .append("\taddress: '" + this.address.toString() + "',\n")
+        .append("\tbilling_info: '" + this.billingInfo+ "',\n");
+        return string.toString();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

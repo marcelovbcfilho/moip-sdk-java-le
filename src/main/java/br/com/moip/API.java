@@ -1,22 +1,7 @@
 package br.com.moip;
 
 
-import br.com.moip.api.AccountAPI;
-import br.com.moip.api.InvoiceAPI;
-import br.com.moip.api.OrderAPI;
-import br.com.moip.api.PaymentAPI;
-import br.com.moip.api.CustomerAPI;
-import br.com.moip.api.ConnectAPI;
-import br.com.moip.api.NotificationPreferencesAPI;
-import br.com.moip.api.RefundAPI;
-import br.com.moip.api.SubscriptionPlanAPI;
-import br.com.moip.api.MultiorderAPI;
-import br.com.moip.api.MultipaymentAPI;
-import br.com.moip.api.BankAccountsAPI;
-import br.com.moip.api.EscrowAPI;
-import br.com.moip.api.TransferApi;
-import br.com.moip.api.EntryAPI;
-import br.com.moip.api.BalancesAPI;
+import br.com.moip.api.*;
 
 public class API {
 
@@ -45,9 +30,9 @@ public class API {
     public CustomerAPI customer() {
         return new CustomerAPI(client);
     }
-    
+
     public SubscriptionPlanAPI subscriptionPlan() {
-    	return new SubscriptionPlanAPI(client);
+        return new SubscriptionPlanAPI(client);
     }
 
     public ConnectAPI connect() {
@@ -66,7 +51,7 @@ public class API {
         return new RefundAPI(client);
     }
 
-    public MultiorderAPI multiorder(){
+    public MultiorderAPI multiorder() {
         return new MultiorderAPI(client);
     }
 
@@ -86,7 +71,19 @@ public class API {
         return new TransferApi(client);
     }
 
-    public EntryAPI entry() { return new EntryAPI(client); }
+    public EntryAPI entry() {
+        return new EntryAPI(client);
+    }
 
-    public BalancesAPI balance() { return new BalancesAPI(client); }
+    public BalancesAPI balance() {
+        return new BalancesAPI(client);
+    }
+
+    public SubscriberAPI subscriber() {
+        return new SubscriberAPI(client);
+    }
+
+    public SubscriptionsAPI subscriptions() {
+        return new SubscriptionsAPI(client);
+    }
 }

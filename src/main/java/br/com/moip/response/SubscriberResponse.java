@@ -1,17 +1,17 @@
-package br.com.moip.request;
+package br.com.moip.response;
 
 import br.com.moip.resource.AddressSubscriber;
 import br.com.moip.resource.BillingInfo;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * This class implements the subscriber attributes needed for a request system from WireCard V1
+ * This class implements the Subscriber's response from WireCard API
  *
  * @author Marcelo Vilas Boas Correa Filho
  * @version 0.1
  */
 
-public class SubscriberRequest {
+public class SubscriberResponse {
 
     /**
      * Required: True
@@ -91,9 +91,9 @@ public class SubscriberRequest {
      * Description: Subscriber's payment data
      */
     @SerializedName("billing_info")
-    private BillingInfo billingInfo;
+    private BillingInfoResponse billingInfo;
 
-    public SubscriberRequest() {
+    public SubscriberResponse() {
     }
 
     /**
@@ -110,7 +110,7 @@ public class SubscriberRequest {
      * @param birthDateYear
      * @param address
      */
-    public SubscriberRequest(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address) {
+    public SubscriberResponse(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address) {
         this.code = code;
         this.fullname = fullname;
         this.email = email;
@@ -123,7 +123,7 @@ public class SubscriberRequest {
         this.address = address;
     }
 
-    public SubscriberRequest(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address, BillingInfo billingInfo) {
+    public SubscriberResponse(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address, BillingInfoResponse billingInfo) {
         this.code = code;
         this.fullname = fullname;
         this.email = email;
@@ -217,11 +217,28 @@ public class SubscriberRequest {
         this.address = address;
     }
 
-    public BillingInfo getBillingInfo() {
+    public BillingInfoResponse getBillingInfo() {
         return billingInfo;
     }
 
-    public void setBillingInfo(BillingInfo billingInfo) {
+    public void setBillingInfo(BillingInfoResponse billingInfo) {
         this.billingInfo = billingInfo;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder("{\n");
+        string.append("\tcode: '" + this.code + "',\n")
+                .append("\temail: '" + this.email + "',\n")
+                .append("\tfullname: '" + this.fullname + "',\n")
+                .append("\tcpf: '" + this.cpf + "',\n")
+                .append("\tphone_area_code: '" + this.phoneAreaCode + "',\n")
+                .append("\tphone_number: '" + this.phoneNumber + "',\n")
+                .append("\tbirthdate_day: '" + this.birthDateDay + "',\n")
+                .append("\tbirthdate_month: '" + this.birthDateMonth + "',\n")
+                .append("\tbirthdate_year: '" + this.birthDateYear + "',\n")
+                .append("\taddress: '" + this.address.toString() + "',\n")
+                .append("\tbilling_info: '" + this.billingInfo.toString() + "',\n");
+        return string.toString();
     }
 }
