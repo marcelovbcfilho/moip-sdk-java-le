@@ -58,7 +58,7 @@ public class CreditCardSubscriber {
         this.expirationYear = expirationYear;
     }
 
-    public CreditCardSubscriber(String holderName, int number, int expirationMonth, int expirationYear, String vault) {
+    public CreditCardSubscriber(String holderName, String number, int expirationMonth, int expirationYear, String vault) {
         this.holderName = holderName;
         this.number = number;
         this.expirationMonth = expirationMonth;
@@ -74,11 +74,11 @@ public class CreditCardSubscriber {
         this.holderName = holderName;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
