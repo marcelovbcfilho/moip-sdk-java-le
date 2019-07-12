@@ -51,8 +51,8 @@ public class SubscriptionsAPI {
      * @return
      * 	Returns the corresponding Subscription Plan
      */
-    public SubscriberResponse get(String code) {
-        return client.get(String.format("/assinaturas/v1/subscriptions/%s", code), SubscriberResponse.class);
+    public SubscriptionResponse get(String code) {
+        return client.get(String.format("/assinaturas/v1/subscriptions/%s", code), SubscriptionResponse.class);
     }
 
     /**

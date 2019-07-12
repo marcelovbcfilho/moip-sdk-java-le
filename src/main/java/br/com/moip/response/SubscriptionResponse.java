@@ -4,7 +4,7 @@ import br.com.moip.resource.*;
 import br.com.moip.resource.Error;
 import com.google.gson.annotations.SerializedName;
 
-public class SubscriptionResponse {
+public class SubscriptionResponse extends Response{
     /**
      * Required: True
      * Max Length: 65
@@ -43,22 +43,6 @@ public class SubscriptionResponse {
     private String status;
 
     /**
-     * Description: Message from the api
-     */
-    private Message message;
-
-    /**
-     * Descriptions: Possible errors
-     */
-    private Error[] errors;
-
-    /**
-     * Description: Possible alerts
-     */
-    // TODO: Fix this not descript in API class
-    private String alerts;
-
-    /**
      * Description: Subscription's invoice
      */
     private InvoiceSubscription invoice;
@@ -66,16 +50,13 @@ public class SubscriptionResponse {
     public SubscriptionResponse() {
     }
 
-    public SubscriptionResponse(String code, String amount, SubscriptionPlan plan, Subscriber customer, NextInvoiceDate nextInvoiceDate, String status, Message message, Error[] errors, String alerts, InvoiceSubscription invoice) {
+    public SubscriptionResponse(String code, String amount, SubscriptionPlan plan, Subscriber customer, NextInvoiceDate nextInvoiceDate, String status, InvoiceSubscription invoice) {
         this.code = code;
         this.amount = amount;
         this.plan = plan;
         this.customer = customer;
         this.nextInvoiceDate = nextInvoiceDate;
         this.status = status;
-        this.message = message;
-        this.errors = errors;
-        this.alerts = alerts;
         this.invoice = invoice;
     }
 
@@ -125,30 +106,6 @@ public class SubscriptionResponse {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Message getMessage() {
-        return message;
-    }
-
-    public void setMessage(Message message) {
-        this.message = message;
-    }
-
-    public Error[] getErrors() {
-        return errors;
-    }
-
-    public void setErrors(Error[] errors) {
-        this.errors = errors;
-    }
-
-    public String getAlerts() {
-        return alerts;
-    }
-
-    public void setAlerts(String alerts) {
-        this.alerts = alerts;
     }
 
     public InvoiceSubscription getInvoice() {
