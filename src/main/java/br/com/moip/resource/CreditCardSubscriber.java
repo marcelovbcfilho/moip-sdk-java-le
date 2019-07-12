@@ -50,6 +50,14 @@ public class CreditCardSubscriber {
     public CreditCardSubscriber() {
     }
 
+
+    public CreditCardSubscriber(String holderName, int number, int expirationMonth, int expirationYear) {
+        this.holderName = holderName;
+        this.number = number;
+        this.expirationMonth = expirationMonth;
+        this.expirationYear = expirationYear;
+    }
+
     public CreditCardSubscriber(String holderName, int number, int expirationMonth, int expirationYear, String vault) {
         this.holderName = holderName;
         this.number = number;

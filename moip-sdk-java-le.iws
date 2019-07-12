@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11ff719d-f658-4420-bac6-addf49c1f1bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/moip/api/SubscriptionsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/moip/api/SubscriptionsAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/moip/response/SubscriptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/moip/response/SubscriptionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/moip-sdk-java-le.iws" beforeDir="false" afterPath="$PROJECT_DIR$/moip-sdk-java-le.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/moip/resource/BillingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/moip/resource/BillingInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/moip/resource/CreditCardSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/moip/resource/CreditCardSubscriber.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -21,20 +22,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/api/SubscriptionsAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="54" column="103" selection-start-line="54" selection-start-column="103" selection-end-line="54" selection-end-column="103" />
+            <state relative-caret-position="240">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/Error.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/request/SubtotalsRequest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="40">
               <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/request/SubscriptionsRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="76" column="96" selection-start-line="76" selection-start-column="96" selection-end-line="76" selection-end-column="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/Subscriber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="123" column="204" selection-start-line="123" selection-start-column="204" selection-end-line="123" selection-end-column="204" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/BillingInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+              <folding>
+                <element signature="e#489#490#0" expanded="true" />
+                <element signature="e#553#554#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#524#525#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/CreditCardSubscriber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/AddressSubscriber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1040">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -77,15 +129,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/SubscriptionPlan.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-220">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/response/SubscriptionResponse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1640">
@@ -113,6 +156,8 @@
         <option value="$PROJECT_DIR$/src/main/java/br/com/moip/resource/Alert.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/moip/response/Response.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/com/moip/response/SubscriptionResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/moip/resource/BillingInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/com/moip/resource/CreditCardSubscriber.java" />
       </list>
     </option>
   </component>
@@ -120,8 +165,8 @@
     <option name="directoryName" value="AdQzvTXd" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="523" />
-    <option name="y" value="-364" />
+    <option name="x" value="457" />
+    <option name="y" value="73" />
     <option name="width" value="936" />
     <option name="height" value="1050" />
   </component>
@@ -160,6 +205,13 @@
               <item name="br.com.moip.java-sdk" type="eaaa3913:PackageViewModuleGroupNode" />
               <item name="br.com.moip.java-sdk.main" type="616d4139:PackageViewModuleNode" />
               <item name="br.com.moip" type="1f31426a:PackageElementNode" />
+              <item name="request" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="java-sdk" type="58d84e3e:PackageViewProjectNode" />
+              <item name="br.com.moip.java-sdk" type="eaaa3913:PackageViewModuleGroupNode" />
+              <item name="br.com.moip.java-sdk.main" type="616d4139:PackageViewModuleNode" />
+              <item name="br.com.moip" type="1f31426a:PackageElementNode" />
               <item name="resource" type="1f31426a:PackageElementNode" />
             </path>
             <path>
@@ -180,7 +232,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562955751022" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562959958951" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -208,12 +260,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562954795644</updated>
-      <workItem from="1562954799791" duration="1227000" />
+      <workItem from="1562954799791" duration="4969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1227000" />
+    <option name="totallyTimeSpent" value="4969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
@@ -322,8 +374,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/api/SubscriptionsAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="54" column="103" selection-start-line="54" selection-start-column="103" selection-end-line="54" selection-end-column="103" />
+        <state relative-caret-position="240">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/request/SubtotalsRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/AddressSubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1040">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/BillingInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/CreditCardSubscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/resource/Subscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="123" column="204" selection-start-line="123" selection-start-column="204" selection-end-line="123" selection-end-column="204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/com/moip/request/SubscriptionsRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="76" column="96" selection-start-line="76" selection-start-column="96" selection-end-line="76" selection-end-column="96" />
         </state>
       </provider>
     </entry>
