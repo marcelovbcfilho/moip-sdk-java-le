@@ -22,7 +22,7 @@ public class CreditCardSubscriber {
      * Required: False
      * Description: Credit card number
      */
-    private int number;
+    private String number;
 
     /**
      * Required: False
@@ -51,7 +51,7 @@ public class CreditCardSubscriber {
     }
 
 
-    public CreditCardSubscriber(String holderName, int number, int expirationMonth, int expirationYear) {
+    public CreditCardSubscriber(String holderName, String number, int expirationMonth, int expirationYear) {
         this.holderName = holderName;
         this.number = number;
         this.expirationMonth = expirationMonth;
