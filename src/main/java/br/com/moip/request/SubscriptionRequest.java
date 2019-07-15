@@ -123,12 +123,12 @@ public class SubscriptionRequest {
         return this;
     }
 
-    public String getProRata() {
-        return proRata;
+    public Boolean getProRata() {
+        return Boolean.valueOf(proRata);
     }
 
-    public SubscriptionRequest setProRata(String proRata) {
-        this.proRata = proRata;
+    public SubscriptionRequest setProRata(boolean proRata) {
+        this.proRata = Boolean.toString(proRata);
         return this;
     }
 
