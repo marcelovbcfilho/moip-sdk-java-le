@@ -2,7 +2,7 @@ package br.com.moip.resource;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
