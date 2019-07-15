@@ -142,92 +142,117 @@ public class Subscriber {
         return code;
     }
 
-    public void setCode(String code) {
+    public Subscriber setCode(String code) {
         this.code = code;
+		return this;
     }
 
     public String getFullname() {
         return fullname;
     }
 
-    public void setFullname(String fullname) {
+    public Subscriber setFullname(String fullname) {
         this.fullname = fullname;
+		return this;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public Subscriber setEmail(String email) {
         this.email = email;
+		return this;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public Subscriber setCpf(String cpf) {
         this.cpf = cpf;
+		return this;
     }
 
     public int getPhoneAreaCode() {
         return phoneAreaCode;
     }
 
-    public void setPhoneAreaCode(int phoneAreaCode) {
+    public Subscriber setPhoneAreaCode(int phoneAreaCode) {
         this.phoneAreaCode = phoneAreaCode;
+		return this;
     }
 
     public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public Subscriber setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
+		return this;
     }
 
     public int getBirthDateDay() {
         return birthDateDay;
     }
 
-    public void setBirthDateDay(int birthDateDay) {
+    public Subscriber setBirthDateDay(int birthDateDay) {
         this.birthDateDay = birthDateDay;
+		return this;
     }
 
     public int getBirthDateMonth() {
         return birthDateMonth;
     }
 
-    public void setBirthDateMonth(int birthDateMonth) {
+    public Subscriber setBirthDateMonth(int birthDateMonth) {
         this.birthDateMonth = birthDateMonth;
+		return this;
     }
 
     public int getBirthDateYear() {
         return birthDateYear;
     }
 
-    public void setBirthDateYear(int birthDateYear) {
+    public Subscriber setBirthDateYear(int birthDateYear) {
         this.birthDateYear = birthDateYear;
+		return this;
     }
 
     public AddressSubscriber getAddress() {
         return address;
     }
 
-    public void setAddress(AddressSubscriber address) {
+    public Subscriber setAddress(AddressSubscriber address) {
         this.address = address;
+		return this;
     }
 
     public BillingInfo getBillingInfo() {
         return billingInfo;
     }
 
-    public void setBillingInfo(BillingInfo billingInfo) {
+    public Subscriber setBillingInfo(BillingInfo billingInfo) {
         this.billingInfo = billingInfo;
+		return this;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.setBirthDateDay(birthDate.getDay());
+    /**
+     * Utility method to fill the Subscriber birth date.
+     * Equivalent to calling Subscriber#setBirthDateDay, Subscriber#setBirthDateMonth and Subscriber#setBirthDateYear
+     * @param birthDate a java.util.Date instance representing the subscriber birth date
+     * @return the current Subscriber instance
+     */
+    public Subscriber setBirthDate(Date birthDate) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(birthDate);
+
+        this.setBirthDateDay(calendar.get(Calendar.DAY_OF_MONTH));
+        this.setBirthDateYear(calendar.get(Calendar.YEAR));
+
+        // See https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html#MONTH
+        this.setBirthDateMonth(calendar.get(Calendar.MONTH)+1);
+        return this;
     }
 
     @Override
