@@ -95,9 +95,17 @@ public class Subscriber {
     private BillingInfo billingInfo;
 
     /**
+     * Constructor used to instantiate a subscriber already cached by the Wirecard API
+     *
+     * @param code the defined subscriber code
+     */
+    public Subscriber(String code) {
+        this.code = code;
+    }
+
+    /**
      * Constructor with only required attributes
      *
-     * @param code
      * @param fullname
      * @param email
      * @param cpf
@@ -108,8 +116,7 @@ public class Subscriber {
      * @param birthDateYear
      * @param address
      */
-    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, SubscriberAddress address) {
-        this.code = code;
+    public Subscriber(String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, SubscriberAddress address) {
         this.fullname = fullname;
         this.email = email;
         this.cpf = cpf;
