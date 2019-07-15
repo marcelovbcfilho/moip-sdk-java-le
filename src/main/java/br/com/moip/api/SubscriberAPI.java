@@ -75,18 +75,18 @@ public class SubscriberAPI {
      * @return
      * 	Return 200 OK if everything was right
      */
-    public Message updateSubscriber (Subscriber sub) {
+    public Message update(Subscriber sub) {
         return client.put(String.format("/assinaturas/v1/customers/%s", sub.getCode()), sub, Message.class);
     }
 
     /**
-     * This method will update a Subscriber's Billing Info, if it exist
-     * @param sub
-     * 	The sub that will be updated
+     * This method will update a Subscriber's Billing Info, if it exists
+     * @param code the subscriber code
+     * @param billingInfo the new subscriber billing info
      * @return
      * 	Return 200 OK if everything was right
      */
-    public Message updateSubscriberBillingInfo (Subscriber sub) {
-        return client.put(String.format("/assinaturas/v1/customers/%s/billing_infos", sub.getCode()), sub.getBillingInfo(), Message.class);
+    public Message updateBillingInfo(String code, BillingInfo billingInfo) {
+        return client.put(String.format("/assinaturas/v1/customers/%s/billing_infos", code), billingInfo, Message.class);
     }
 }

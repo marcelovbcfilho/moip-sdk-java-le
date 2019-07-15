@@ -61,7 +61,7 @@ public class SubscriptionAPI {
      * @return
      * 	Return nothing, but it will verify the response code if 200 it suspend successfully
      */
-    public Message suspendSubscriptions (SubscriptionRequest subs) {
+    public Message suspend(SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s/suspend", subs.getCode()), subs, Message.class);
     }
 
@@ -72,7 +72,7 @@ public class SubscriptionAPI {
      * @return
      *  Return void, the way to know if everything goes will is by the answer from the API 200 = OK
      */
-    public Message reactiveSubscriptions (SubscriptionRequest subs) {
+    public Message reactivate(SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s/activate", subs.getCode()), subs, Message.class);
     }
 
@@ -82,7 +82,7 @@ public class SubscriptionAPI {
      * 	The plan to be desactivated
      * @return
      */
-    public Message cancelSubscriptions (SubscriptionRequest subs) {
+    public Message cancel(SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s/cancel", subs.getCode()), subs, Message.class);
     }
 
@@ -93,7 +93,7 @@ public class SubscriptionAPI {
      * @return
      * 	Return 200 OK if everithing was right
      */
-    public Message updateSubscriptionPlan (SubscriptionRequest subs) {
+    public Message update(SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s", subs.getCode()), subs, Message.class);
     }
 }
