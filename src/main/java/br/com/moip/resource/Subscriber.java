@@ -85,7 +85,7 @@ public class Subscriber {
      * Required: True
      * Description: Subscriber's address
      */
-    private AddressSubscriber address;
+    private SubscriberAddress address;
 
     /**
      * Required: False
@@ -108,7 +108,7 @@ public class Subscriber {
      * @param birthDateYear
      * @param address
      */
-    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address) {
+    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, SubscriberAddress address) {
         this.code = code;
         this.fullname = fullname;
         this.email = email;
@@ -202,11 +202,11 @@ public class Subscriber {
 		return this;
     }
 
-    public AddressSubscriber getAddress() {
+    public SubscriberAddress getAddress() {
         return address;
     }
 
-    public Subscriber setAddress(AddressSubscriber address) {
+    public Subscriber setAddress(SubscriberAddress address) {
         this.address = address;
 		return this;
     }

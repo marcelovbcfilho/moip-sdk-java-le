@@ -6,7 +6,7 @@ package br.com.moip.resource;
  * @version 0.1
  */
 
-public class AddressSubscriber {
+public class SubscriberAddress {
 
     /**
      * Required: True
@@ -59,7 +59,7 @@ public class AddressSubscriber {
      */
     private int zipcode;
 
-    public AddressSubscriber() {
+    public SubscriberAddress() {
     }
 
     /**
@@ -72,7 +72,7 @@ public class AddressSubscriber {
      * @param country
      * @param zipcode
      */
-    public AddressSubscriber(String street, int number, String city, String district, String state, String country, int zipcode) {
+    public SubscriberAddress(String street, int number, String city, String district, String state, String country, int zipcode) {
         this.street = street;
         this.number = number;
         this.city = city;
