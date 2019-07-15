@@ -111,21 +111,17 @@ public class Subscriber {
      * @param cpf
      * @param phoneAreaCode
      * @param phoneNumber
-     * @param birthDateDay
-     * @param birthDateMonth
-     * @param birthDateYear
+     * @param birthDate
      * @param address
      */
-    public Subscriber(String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, SubscriberAddress address) {
+    public Subscriber(String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, Date birthDate, SubscriberAddress address) {
         this.fullname = fullname;
         this.email = email;
         this.cpf = cpf;
         this.phoneAreaCode = phoneAreaCode;
         this.phoneNumber = phoneNumber;
-        this.birthDateDay = birthDateDay;
-        this.birthDateMonth = birthDateMonth;
-        this.birthDateYear = birthDateYear;
         this.address = address;
+        this.setBirthDate(birthDate);
     }
 
     public String getCode() {
