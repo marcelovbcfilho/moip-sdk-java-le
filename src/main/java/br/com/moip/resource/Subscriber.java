@@ -94,9 +94,6 @@ public class Subscriber {
     @SerializedName("billing_info")
     private BillingInfo billingInfo;
 
-    public Subscriber() {
-    }
-
     /**
      * Constructor with only required attributes
      *
@@ -122,20 +119,6 @@ public class Subscriber {
         this.birthDateMonth = birthDateMonth;
         this.birthDateYear = birthDateYear;
         this.address = address;
-    }
-
-    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address, BillingInfo billingInfo) {
-        this.code = code;
-        this.fullname = fullname;
-        this.email = email;
-        this.cpf = cpf;
-        this.phoneAreaCode = phoneAreaCode;
-        this.phoneNumber = phoneNumber;
-        this.birthDateDay = birthDateDay;
-        this.birthDateMonth = birthDateMonth;
-        this.birthDateYear = birthDateYear;
-        this.address = address;
-        this.billingInfo = billingInfo;
     }
 
     public String getCode() {
