@@ -1,7 +1,6 @@
 package br.com.moip.response;
 
-import br.com.moip.resource.AddressSubscriber;
-import br.com.moip.resource.BillingInfo;
+import br.com.moip.resource.SubscriberAddress;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -84,7 +83,7 @@ public class SubscriberResponse {
      * Required: True
      * Description: Subscriber's address
      */
-    private AddressSubscriber address;
+    private SubscriberAddress address;
 
     /**
      * Required: False
@@ -110,7 +109,7 @@ public class SubscriberResponse {
      * @param birthDateYear
      * @param address
      */
-    public SubscriberResponse(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address) {
+    public SubscriberResponse(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, SubscriberAddress address) {
         this.code = code;
         this.fullname = fullname;
         this.email = email;
@@ -123,7 +122,7 @@ public class SubscriberResponse {
         this.address = address;
     }
 
-    public SubscriberResponse(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address, BillingInfoResponse billingInfo) {
+    public SubscriberResponse(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, SubscriberAddress address, BillingInfoResponse billingInfo) {
         this.code = code;
         this.fullname = fullname;
         this.email = email;
@@ -209,11 +208,11 @@ public class SubscriberResponse {
         this.birthDateYear = birthDateYear;
     }
 
-    public AddressSubscriber getAddress() {
+    public SubscriberAddress getAddress() {
         return address;
     }
 
-    public void setAddress(AddressSubscriber address) {
+    public void setAddress(SubscriberAddress address) {
         this.address = address;
     }
 

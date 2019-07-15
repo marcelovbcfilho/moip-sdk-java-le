@@ -97,123 +97,118 @@ public class SubscriptionPlanRequest {
 	 */
 	private String id;
 	
-	public SubscriptionPlanRequest() {}
-	
 	public SubscriptionPlanRequest(String code, String name, int amount) {
 		this.code = code;
 		this.name = name;
 		this.amount = amount;
-	}
-	
-	public SubscriptionPlanRequest(String code, String name, String description,
-									int amount, int setupFee, IntervalSubscriptionRequest interval,
-									int billingCycles, TrialSubscriptionRequest trial, boolean status, 
-									int maxQty, String paymentMethod) {
-		this.code = code;
-		this.name = name;
-		this.amount = amount;
-		this.interval = interval;
-		this.billingCycles = billingCycles;
-		this.trial = trial;
-		this.status = status;
-		this.maxQty = maxQty;
-		this.paymentMethod = paymentMethod;
 	}
 
 	public String getCode() {
 		return code;
 	}
 
-	public void setCode(String code) {
+	public SubscriptionPlanRequest setCode(String code) {
 		this.code = code;
+		return this;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public SubscriptionPlanRequest setName(String name) {
 		this.name = name;
+		return this;
 	}
 
 	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description) {
+	public SubscriptionPlanRequest setDescription(String description) {
 		this.description = description;
+		return this;
 	}
 
 	public int getAmount() {
 		return amount;
 	}
 
-	public void setAmount(int amount) {
+	public SubscriptionPlanRequest setAmount(int amount) {
 		this.amount = amount;
+		return this;
 	}
 
 	public int getSetup_fee() {
 		return setup_fee;
 	}
 
-	public void setSetup_fee(int setup_fee) {
+	public SubscriptionPlanRequest setSetup_fee(int setup_fee) {
 		this.setup_fee = setup_fee;
+		return this;
 	}
 
 	public IntervalSubscriptionRequest getInterval() {
 		return interval;
 	}
 
-	public void setInterval(IntervalSubscriptionRequest interval) {
+	public SubscriptionPlanRequest setInterval(IntervalSubscriptionRequest interval) {
 		this.interval = interval;
+		return this;
 	}
 
 	public int getBillingCycles() {
 		return billingCycles;
 	}
 
-	public void setBillingCycles(int billingCycles) {
+	public SubscriptionPlanRequest setBillingCycles(int billingCycles) {
 		this.billingCycles = billingCycles;
+		return this;
 	}
 
 	public TrialSubscriptionRequest getTrial() {
 		return trial;
 	}
 
-	public void setTrial(TrialSubscriptionRequest trial) {
+	public SubscriptionPlanRequest setTrial(TrialSubscriptionRequest trial) {
 		this.trial = trial;
+		return this;
 	}
 
 	public boolean isStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public SubscriptionPlanRequest setStatus(boolean status) {
 		this.status = status;
+		return this;
 	}
 
 	public int getMaxQty() {
 		return maxQty;
 	}
 
-	public void setMaxQty(int maxQty) {
+	public SubscriptionPlanRequest setMaxQty(int maxQty) {
 		this.maxQty = maxQty;
+		return this;
 	}
 
 	public String getPaymentMethod() {
 		return paymentMethod;
 	}
 
-	public void setPaymentMethod(String paymentMethod) {
+	public SubscriptionPlanRequest setPaymentMethod(String paymentMethod) {
 		this.paymentMethod = paymentMethod;
+		return this;
 	}
 
 	public String getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public SubscriptionPlanRequest setId(String id) {
 		this.id = id;
+		return this;
 	}
 }
 

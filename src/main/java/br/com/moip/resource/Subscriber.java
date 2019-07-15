@@ -2,6 +2,9 @@ package br.com.moip.resource;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * This class implements the data needed to create a subscriber on WireCard API
  *
@@ -82,7 +85,7 @@ public class Subscriber {
      * Required: True
      * Description: Subscriber's address
      */
-    private AddressSubscriber address;
+    private SubscriberAddress address;
 
     /**
      * Required: False
@@ -91,136 +94,152 @@ public class Subscriber {
     @SerializedName("billing_info")
     private BillingInfo billingInfo;
 
-    public Subscriber() {
+    /**
+     * Constructor used to instantiate a subscriber already cached by the Wirecard API
+     *
+     * @param code the defined subscriber code
+     */
+    public Subscriber(String code) {
+        this.code = code;
     }
 
     /**
      * Constructor with only required attributes
      *
-     * @param code
      * @param fullname
      * @param email
      * @param cpf
      * @param phoneAreaCode
      * @param phoneNumber
-     * @param birthDateDay
-     * @param birthDateMonth
-     * @param birthDateYear
+     * @param birthDate
      * @param address
      */
-    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address) {
+    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, Date birthDate, SubscriberAddress address) {
         this.code = code;
         this.fullname = fullname;
         this.email = email;
         this.cpf = cpf;
         this.phoneAreaCode = phoneAreaCode;
         this.phoneNumber = phoneNumber;
-        this.birthDateDay = birthDateDay;
-        this.birthDateMonth = birthDateMonth;
-        this.birthDateYear = birthDateYear;
         this.address = address;
-    }
-
-    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, int birthDateDay, int birthDateMonth, int birthDateYear, AddressSubscriber address, BillingInfo billingInfo) {
-        this.code = code;
-        this.fullname = fullname;
-        this.email = email;
-        this.cpf = cpf;
-        this.phoneAreaCode = phoneAreaCode;
-        this.phoneNumber = phoneNumber;
-        this.birthDateDay = birthDateDay;
-        this.birthDateMonth = birthDateMonth;
-        this.birthDateYear = birthDateYear;
-        this.address = address;
-        this.billingInfo = billingInfo;
+        this.setBirthDate(birthDate);
     }
 
     public String getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public Subscriber setCode(String code) {
         this.code = code;
+		return this;
     }
 
     public String getFullname() {
         return fullname;
     }
 
-    public void setFullname(String fullname) {
+    public Subscriber setFullname(String fullname) {
         this.fullname = fullname;
+		return this;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public Subscriber setEmail(String email) {
         this.email = email;
+		return this;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public Subscriber setCpf(String cpf) {
         this.cpf = cpf;
+		return this;
     }
 
     public int getPhoneAreaCode() {
         return phoneAreaCode;
     }
 
-    public void setPhoneAreaCode(int phoneAreaCode) {
+    public Subscriber setPhoneAreaCode(int phoneAreaCode) {
         this.phoneAreaCode = phoneAreaCode;
+		return this;
     }
 
     public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public Subscriber setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
+		return this;
     }
 
     public int getBirthDateDay() {
         return birthDateDay;
     }
 
-    public void setBirthDateDay(int birthDateDay) {
+    public Subscriber setBirthDateDay(int birthDateDay) {
         this.birthDateDay = birthDateDay;
+		return this;
     }
 
     public int getBirthDateMonth() {
         return birthDateMonth;
     }
 
-    public void setBirthDateMonth(int birthDateMonth) {
+    public Subscriber setBirthDateMonth(int birthDateMonth) {
         this.birthDateMonth = birthDateMonth;
+		return this;
     }
 
     public int getBirthDateYear() {
         return birthDateYear;
     }
 
-    public void setBirthDateYear(int birthDateYear) {
+    public Subscriber setBirthDateYear(int birthDateYear) {
         this.birthDateYear = birthDateYear;
+		return this;
     }
 
-    public AddressSubscriber getAddress() {
+    public SubscriberAddress getAddress() {
         return address;
     }
 
-    public void setAddress(AddressSubscriber address) {
+    public Subscriber setAddress(SubscriberAddress address) {
         this.address = address;
+		return this;
     }
 
     public BillingInfo getBillingInfo() {
         return billingInfo;
     }
 
-    public void setBillingInfo(BillingInfo billingInfo) {
+    public Subscriber setBillingInfo(BillingInfo billingInfo) {
         this.billingInfo = billingInfo;
+		return this;
+    }
+
+    /**
+     * Utility method to fill the Subscriber birth date.
+     * Equivalent to calling Subscriber#setBirthDateDay, Subscriber#setBirthDateMonth and Subscriber#setBirthDateYear
+     * @param birthDate a java.util.Date instance representing the subscriber birth date
+     * @return the current Subscriber instance
+     */
+    public Subscriber setBirthDate(Date birthDate) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(birthDate);
+
+        this.setBirthDateDay(calendar.get(Calendar.DAY_OF_MONTH));
+        this.setBirthDateYear(calendar.get(Calendar.YEAR));
+
+        // See https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html#MONTH
+        this.setBirthDateMonth(calendar.get(Calendar.MONTH)+1);
+        return this;
     }
 
     @Override

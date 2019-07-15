@@ -6,7 +6,7 @@ package br.com.moip.resource;
  * @version 0.1
  */
 
-public class AddressSubscriber {
+public class SubscriberAddress {
 
     /**
      * Required: True
@@ -59,9 +59,6 @@ public class AddressSubscriber {
      */
     private int zipcode;
 
-    public AddressSubscriber() {
-    }
-
     /**
      * Constructor with only required attributes
      * @param street
@@ -72,7 +69,7 @@ public class AddressSubscriber {
      * @param country
      * @param zipcode
      */
-    public AddressSubscriber(String street, int number, String city, String district, String state, String country, int zipcode) {
+    public SubscriberAddress(String street, int number, String city, String district, String state, String country, int zipcode) {
         this.street = street;
         this.number = number;
         this.city = city;
@@ -86,64 +83,72 @@ public class AddressSubscriber {
         return street;
     }
 
-    public void setStreet(String street) {
+    public SubscriberAddress setStreet(String street) {
         this.street = street;
+		return this;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public SubscriberAddress setNumber(int number) {
         this.number = number;
+		return this;
     }
 
     public String getComplement() {
         return complement;
     }
 
-    public void setComplement(String complement) {
+    public SubscriberAddress setComplement(String complement) {
         this.complement = complement;
+		return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public SubscriberAddress setCity(String city) {
         this.city = city;
+		return this;
     }
 
     public String getDistrict() {
         return district;
     }
 
-    public void setDistrict(String district) {
+    public SubscriberAddress setDistrict(String district) {
         this.district = district;
+		return this;
     }
 
     public String getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public SubscriberAddress setState(String state) {
         this.state = state;
+		return this;
     }
 
     public String getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public SubscriberAddress setCountry(String country) {
         this.country = country;
+		return this;
     }
 
     public int getZipcode() {
         return zipcode;
     }
 
-    public void setZipcode(int zipcode) {
+    public SubscriberAddress setZipcode(int zipcode) {
         this.zipcode = zipcode;
+		return this;
     }
 
     @Override

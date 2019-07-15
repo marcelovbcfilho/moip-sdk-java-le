@@ -1,9 +1,8 @@
 package br.com.moip.api;
 
 import br.com.moip.Client;
-import br.com.moip.request.SubscriptionsRequest;
+import br.com.moip.request.SubscriptionRequest;
 import br.com.moip.resource.Message;
-import br.com.moip.response.SubscriberResponse;
 import br.com.moip.response.SubscriptionListResponse;
 import br.com.moip.response.SubscriptionResponse;
 
@@ -31,7 +30,7 @@ public class SubscriptionsAPI {
      * @return
      * 	Return the Subscriptions with the ID auto generated from the WireCard API
      */
-    public SubscriptionResponse create(SubscriptionsRequest subs) {
+    public SubscriptionResponse create(SubscriptionRequest subs) {
         return client.post("/assinaturas/v1/subscriptions", subs, SubscriptionResponse.class);
     }
 
@@ -62,7 +61,7 @@ public class SubscriptionsAPI {
      * @return
      * 	Return nothing, but it will verify the response code if 200 it suspend successfully
      */
-    public Message suspendSubscriptions (SubscriptionsRequest subs) {
+    public Message suspendSubscriptions (SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s/suspend", subs.getCode()), subs, Message.class);
     }
 
@@ -73,7 +72,7 @@ public class SubscriptionsAPI {
      * @return
      *  Return void, the way to know if everything goes will is by the answer from the API 200 = OK
      */
-    public Message reactiveSubscriptions (SubscriptionsRequest subs) {
+    public Message reactiveSubscriptions (SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s/activate", subs.getCode()), subs, Message.class);
     }
 
@@ -83,7 +82,7 @@ public class SubscriptionsAPI {
      * 	The plan to be desactivated
      * @return
      */
-    public Message cancelSubscriptions (SubscriptionsRequest subs) {
+    public Message cancelSubscriptions (SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s/cancel", subs.getCode()), subs, Message.class);
     }
 
@@ -94,7 +93,7 @@ public class SubscriptionsAPI {
      * @return
      * 	Return 200 OK if everithing was right
      */
-    public Message updateSubscriptionPlan (SubscriptionsRequest subs) {
+    public Message updateSubscriptionPlan (SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s", subs.getCode()), subs, Message.class);
     }
 }
