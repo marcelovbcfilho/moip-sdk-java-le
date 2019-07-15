@@ -114,7 +114,8 @@ public class Subscriber {
      * @param birthDate
      * @param address
      */
-    public Subscriber(String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, Date birthDate, SubscriberAddress address) {
+    public Subscriber(String code, String fullname, String email, String cpf, int phoneAreaCode, int phoneNumber, Date birthDate, SubscriberAddress address) {
+        this.code = code;
         this.fullname = fullname;
         this.email = email;
         this.cpf = cpf;
