@@ -78,12 +78,11 @@ public class SubscriptionAPI {
 
     /**
      * This method inactive the received Plan using the WireCard API
-     * @param subs
-     * 	The plan to be desactivated
+     * @param code the code of the subscription to be cancelled
      * @return
      */
-    public Message cancel(SubscriptionRequest subs) {
-        return client.put(String.format("/assinaturas/v1/subscriptions/%s/cancel", subs.getCode()), subs, Message.class);
+    public Message cancel(String code) {
+        return client.put(String.format("/assinaturas/v1/subscriptions/%s/cancel", code), Message.class);
     }
 
     /**
