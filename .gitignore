@@ -4,6 +4,8 @@
 bin
 target
 *.iml
+*.ipr
+*.iws
 .idea/
 *.swp
 .gradle
