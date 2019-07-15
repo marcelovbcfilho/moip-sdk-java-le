@@ -83,7 +83,7 @@ public class API {
         return new SubscriberAPI(client);
     }
 
-    public SubscriptionsAPI subscriptions() {
-        return new SubscriptionsAPI(client);
+    public SubscriptionAPI subscriptions() {
+        return new SubscriptionAPI(client);
     }
 }

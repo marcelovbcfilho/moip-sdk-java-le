@@ -12,14 +12,14 @@ import br.com.moip.response.SubscriptionResponse;
  * @version 0.1
  */
 
-public class SubscriptionsAPI {
+public class SubscriptionAPI {
     private final Client client;
 
     /**
      * Client that will make the request
      * @param client
      */
-    public SubscriptionsAPI(Client client) {
+    public SubscriptionAPI(Client client) {
         this.client = client;
     }
 
