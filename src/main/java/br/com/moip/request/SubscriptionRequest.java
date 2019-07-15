@@ -12,12 +12,12 @@ import com.google.gson.annotations.SerializedName;
  * @version 0.1
  */
 
-public class SubscriptionsRequest {
+public class SubscriptionRequest {
 
     /**
      * Required: True
      * Max Length: 65
-     * Description: Your own subscription ID. Must not be duplicated.
+     * Description: Your own subscription ID. Must be duplicated.
      */
     private String code;
 
@@ -63,9 +63,6 @@ public class SubscriptionsRequest {
     @SerializedName("best_invoice_date")
     private InvoiceDate bestInvoiceDate;
 
-    public SubscriptionsRequest() {
-    }
-
     /**
      * Only required Attributes to use the Subscriptions WireCard API
      *
@@ -74,76 +71,73 @@ public class SubscriptionsRequest {
      * @param plan
      * @param customer
      */
-    public SubscriptionsRequest(String code, String paymentMethod, SubscriptionPlan plan, Subscriber customer) {
+    public SubscriptionRequest(String code, String paymentMethod, SubscriptionPlan plan, Subscriber customer) {
         this.code = code;
         this.paymentMethod = paymentMethod;
         this.customer = customer;
         this.plan = plan;
-    }
-
-    public SubscriptionsRequest(String code, String amount, String paymentMethod, SubscriptionPlan plan, Subscriber customer, String proRata, InvoiceDate bestInvoiceDate) {
-        this.code = code;
-        this.amount = amount;
-        this.paymentMethod = paymentMethod;
-        this.plan = plan;
-        this.customer = customer;
-        this.proRata = proRata;
-        this.bestInvoiceDate = bestInvoiceDate;
     }
 
     public String getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public SubscriptionRequest setCode(String code) {
         this.code = code;
+        return this;
     }
 
     public String getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public SubscriptionRequest setAmount(String amount) {
         this.amount = amount;
+        return this;
     }
 
     public String getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
+    public SubscriptionRequest setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
+        return this;
     }
 
     public SubscriptionPlan getPlan() {
         return plan;
     }
 
-    public void setPlan(SubscriptionPlan plan) {
+    public SubscriptionRequest setPlan(SubscriptionPlan plan) {
         this.plan = plan;
+        return this;
     }
 
     public Subscriber getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Subscriber customer) {
+    public SubscriptionRequest setCustomer(Subscriber customer) {
         this.customer = customer;
+        return this;
     }
 
     public String getProRata() {
         return proRata;
     }
 
-    public void setProRata(String proRata) {
+    public SubscriptionRequest setProRata(String proRata) {
         this.proRata = proRata;
+        return this;
     }
 
     public InvoiceDate getBestInvoiceDate() {
         return bestInvoiceDate;
     }
 
-    public void setBestInvoiceDate(InvoiceDate bestInvoiceDate) {
+    public SubscriptionRequest setBestInvoiceDate(InvoiceDate bestInvoiceDate) {
         this.bestInvoiceDate = bestInvoiceDate;
+        return this;
     }
 }

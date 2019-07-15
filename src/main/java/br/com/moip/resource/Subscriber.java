@@ -2,6 +2,9 @@ package br.com.moip.resource;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 /**
  * This class implements the data needed to create a subscriber on WireCard API
  *
@@ -221,6 +224,10 @@ public class Subscriber {
 
     public void setBillingInfo(BillingInfo billingInfo) {
         this.billingInfo = billingInfo;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.setBirthDateDay(birthDate.getDay());
     }
 
     @Override
