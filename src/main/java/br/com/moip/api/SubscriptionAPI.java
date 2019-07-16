@@ -25,13 +25,12 @@ public class SubscriptionAPI {
 
     /**
      * This methods create a new Subscriptions
-     * @param subs
-     * 	The parameter is the Plan that will be created
-     * @return
-     * 	Return the Subscriptions with the ID auto generated from the WireCard API
+     * @param newCustomer indicates whether the customer is new or not
+     * @param subs the subscription to be created
+     * @return generated subscription
      */
-    public SubscriptionResponse create(SubscriptionRequest subs) {
-        return client.post("/assinaturas/v1/subscriptions", subs, SubscriptionResponse.class);
+    public SubscriptionResponse create(boolean newCustomer, SubscriptionRequest subs) {
+        return client.post(String.format("/assinaturas/v1/subscriptions?new_customer=%s", newCustomer), subs, SubscriptionResponse.class);
     }
 
     /**
