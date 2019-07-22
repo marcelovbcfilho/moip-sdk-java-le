@@ -86,6 +86,11 @@ public class Client {
         return doRequest(props);
     }
 
+    public <T> T put(final String path, final Class<T> type) {
+        RequestProps props = RequestPropsBuilder.requestPropsBuilder().method("PUT").path(path).type(type).contentType(ContentType.APPLICATION_JSON);
+        return doRequest(props);
+    }
+
     public <T> T get(String path, Class<T> type) {
         RequestProps props = RequestPropsBuilder.requestPropsBuilder().method("GET").path(path).type(type).contentType(ContentType.APPLICATION_JSON);
         return doRequest(props);

@@ -1,7 +1,6 @@
 package br.com.moip.response;
 
 import br.com.moip.resource.Alert;
-import br.com.moip.resource.Message;
 
 /**
  * This class implements the basis that all responses could have from WireCard API
@@ -12,7 +11,7 @@ import br.com.moip.resource.Message;
 
 public class Response {
     private Error[] errors;
-    private Message message;
+    private String message;
     private Alert[] alerts;
 
     boolean hasErrors() {
@@ -47,11 +46,11 @@ public class Response {
         this.errors = errors;
     }
 
-    public Message getMessage() {
+    public String getMessage() {
         return message;
     }
 
-    public void setMessage(Message message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 

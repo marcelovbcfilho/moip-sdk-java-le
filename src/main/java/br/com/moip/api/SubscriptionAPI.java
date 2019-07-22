@@ -12,26 +12,25 @@ import br.com.moip.response.SubscriptionResponse;
  * @version 0.1
  */
 
-public class SubscriptionsAPI {
+public class SubscriptionAPI {
     private final Client client;
 
     /**
      * Client that will make the request
      * @param client
      */
-    public SubscriptionsAPI(Client client) {
+    public SubscriptionAPI(Client client) {
         this.client = client;
     }
 
     /**
      * This methods create a new Subscriptions
-     * @param subs
-     * 	The parameter is the Plan that will be created
-     * @return
-     * 	Return the Subscriptions with the ID auto generated from the WireCard API
+     * @param newCustomer indicates whether the customer is new or not
+     * @param subs the subscription to be created
+     * @return generated subscription
      */
-    public SubscriptionResponse create(SubscriptionRequest subs) {
-        return client.post("/assinaturas/v1/subscriptions", subs, SubscriptionResponse.class);
+    public SubscriptionResponse create(boolean newCustomer, SubscriptionRequest subs) {
+        return client.post(String.format("/assinaturas/v1/subscriptions?new_customer=%s", newCustomer), subs, SubscriptionResponse.class);
     }
 
     /**
@@ -61,7 +60,7 @@ public class SubscriptionsAPI {
      * @return
      * 	Return nothing, but it will verify the response code if 200 it suspend successfully
      */
-    public Message suspendSubscriptions (SubscriptionRequest subs) {
+    public Message suspend(SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s/suspend", subs.getCode()), subs, Message.class);
     }
 
@@ -72,18 +71,17 @@ public class SubscriptionsAPI {
      * @return
      *  Return void, the way to know if everything goes will is by the answer from the API 200 = OK
      */
-    public Message reactiveSubscriptions (SubscriptionRequest subs) {
+    public Message reactivate(SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s/activate", subs.getCode()), subs, Message.class);
     }
 
     /**
      * This method inactive the received Plan using the WireCard API
-     * @param subs
-     * 	The plan to be desactivated
+     * @param code the code of the subscription to be cancelled
      * @return
      */
-    public Message cancelSubscriptions (SubscriptionRequest subs) {
-        return client.put(String.format("/assinaturas/v1/subscriptions/%s/cancel", subs.getCode()), subs, Message.class);
+    public Message cancel(String code) {
+        return client.put(String.format("/assinaturas/v1/subscriptions/%s/cancel", code), Message.class);
     }
 
     /**
@@ -93,7 +91,7 @@ public class SubscriptionsAPI {
      * @return
      * 	Return 200 OK if everithing was right
      */
-    public Message updateSubscriptionPlan (SubscriptionRequest subs) {
+    public Message update(SubscriptionRequest subs) {
         return client.put(String.format("/assinaturas/v1/subscriptions/%s", subs.getCode()), subs, Message.class);
     }
 }
