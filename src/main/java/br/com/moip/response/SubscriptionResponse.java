@@ -2,6 +2,7 @@ package br.com.moip.response;
 
 import br.com.moip.resource.*;
 import br.com.moip.resource.Error;
+import br.com.moip.resource.links.SubscriptionLinks;
 import com.google.gson.annotations.SerializedName;
 
 public class SubscriptionResponse extends Response{
@@ -46,6 +47,11 @@ public class SubscriptionResponse extends Response{
      * Description: Subscription's invoice
      */
     private InvoiceSubscription invoice;
+
+    /**
+     * Description: If the subscription was made with Boleto, this property is returned
+     */
+    private SubscriptionLinks _links;
 
     public SubscriptionResponse() {
     }
@@ -114,5 +120,9 @@ public class SubscriptionResponse extends Response{
 
     public void setInvoice(InvoiceSubscription invoice) {
         this.invoice = invoice;
+    }
+
+    public SubscriptionLinks getLinks() {
+        return _links;
     }
 }
